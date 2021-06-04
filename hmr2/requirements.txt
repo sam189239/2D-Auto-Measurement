@@ -1,0 +1,15 @@
+matplotlib
+numpy
+scipy
+opencv-python
+tensorflow
+# tensorflow-gpu
+tqdm
+
+## uncomment the following dependencies for generating tfrecords
+## or using notebooks
+# pycocotools
+# trimesh
+# networkx
+# pyglet
+
