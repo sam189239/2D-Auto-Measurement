@@ -1,5 +1,5 @@
 from utils import *
-import sys
+# import utils
 
 def process(ht):
   start_top = time.time()
@@ -18,7 +18,6 @@ def process(ht):
   start_front = time.time()
   front_image = Image.open(front_img_dir)
   res_im,seg_f=seg_model.run(front_image)
-
   mask_f, bg_removed_f = bg_removal(front_image, seg_f)
 
   ori_f, inp_f, param_f = preprocess_image("..\\..\\out\\bg_rem_img.jpg",224)
@@ -43,7 +42,8 @@ def process(ht):
 
 
   shifted_waist_f = shift_waist(joints_f, ht_p_f, waist_shift_factor)
-  r_waist_f,l_waist_f = waist_pts(mask_scaled_f,shifted_waist_f)
+  # r_waist_f,l_waist_f = waist_pts(mask_scaled_f,shifted_waist_f)
+  r_waist_f,l_waist_f = waist_pts(abs(edges_f)>0,shifted_waist_f)
 
   r_waist_f = [r_waist_f,shifted_waist_f[1]]
   l_waist_f = [l_waist_f,shifted_waist_f[1]]
@@ -95,7 +95,8 @@ def process(ht):
 
 
   shifted_waist_s = shift_waist(joints_s, ht_p_s, waist_shift_factor)
-  r_waist_s,l_waist_s = waist_pts(mask_scaled_s,shifted_waist_s)
+  # r_waist_s,l_waist_s = waist_pts(mask_scaled_s,shifted_waist_s)
+  r_waist_s,l_waist_s = waist_pts(abs(edges_s)>0,shifted_waist_s)
 
   r_waist_s = [r_waist_s,shifted_waist_s[1]]
   l_waist_s = [l_waist_s,shifted_waist_s[1]]
@@ -105,7 +106,7 @@ def process(ht):
   
 
   ## Feature points ##
-  plt.subplot(121)
+  plt.subplot(221)
   plt.imshow(mask_scaled_f)
   plt.plot(r_waist_f[0],r_waist_f[1], marker='.', color="blue")
   plt.plot(l_waist_f[0],l_waist_f[1], marker='.', color="blue")
@@ -119,7 +120,7 @@ def process(ht):
   for i in [2,3,6,11]:
     plt.plot(joints_f[i][0], joints_f[i][1], marker='.', color="red")
 
-  plt.subplot(122)
+  plt.subplot(222)
   plt.imshow(mask_scaled_s)
   plt.plot(r_waist_s[0],r_waist_s[1], marker='.', color="blue")
   plt.plot(l_waist_s[0],l_waist_s[1], marker='.', color="blue")
@@ -128,8 +129,82 @@ def process(ht):
   plt.plot(joints_s[12][0], joints_s[12][1],marker = ".", color = 'red')
   for i in [2,3]:
     plt.plot(joints_s[i][0], joints_s[i][1], marker='.', color="red")
-  plt.savefig('..\\..\\out\\FinalFeaturePoints.jpg')
 
+  plt.subplot(223)
+  plt.imshow((((inp_f / 2.)+0.5)*255).astype(int))
+  plt.plot(r_waist_f[0],r_waist_f[1], marker='.', color="blue")
+  plt.plot(l_waist_f[0],l_waist_f[1], marker='.', color="blue")
+  plt.plot(r_neck_scaled_f[0],r_neck_scaled_f[1],marker = ".", color = 'blue')
+  plt.plot(l_neck_scaled_f[0],l_neck_scaled_f[1],marker = ".", color = 'blue')
+  plt.plot(joints_f[12][0], joints_f[12][1],marker = ".", color = 'red')
+  plt.plot(left_wrist_r[0],left_wrist_r[1],marker='.',color = 'blue')
+  plt.plot(left_wrist_l[0],left_wrist_l[1],marker='.',color = 'blue')
+  plt.plot(right_wrist_r[0],right_wrist_r[1],marker='.',color = 'blue')
+  plt.plot(right_wrist_l[0],right_wrist_l[1],marker='.',color = 'blue')
+  for i in [2,3,6,11]:
+    plt.plot(joints_f[i][0], joints_f[i][1], marker='.', color="red")
+
+  plt.subplot(224)
+  plt.imshow((((inp_s / 2.)+0.5)*255).astype(int))
+  plt.plot(r_waist_s[0],r_waist_s[1], marker='.', color="blue")
+  plt.plot(l_waist_s[0],l_waist_s[1], marker='.', color="blue")
+  plt.plot(r_neck_scaled_s[0],r_neck_scaled_s[1],marker = ".", color = 'blue')
+  plt.plot(l_neck_scaled_s[0],l_neck_scaled_s[1],marker = ".", color = 'blue')
+  plt.plot(joints_s[12][0], joints_s[12][1],marker = ".", color = 'red')
+  for i in [2,3]:
+    plt.plot(joints_s[i][0], joints_s[i][1], marker='.', color="red")
+
+  # plt.subplot(221)
+  # plt.imshow(mask_scaled_f)
+  # plt.scatter(r_waist_f[0],r_waist_f[1], color="blue")
+  # plt.scatter(l_waist_f[0],l_waist_f[1], color="blue")
+  # plt.scatter(r_neck_scaled_f[0],r_neck_scaled_f[1], color = 'blue')
+  # plt.scatter(l_neck_scaled_f[0],l_neck_scaled_f[1], color = 'blue')
+  # plt.scatter(joints_f[12][0], joints_f[12][1], color = 'red')
+  # plt.scatter(left_wrist_r[0],left_wrist_r[1],color = 'blue')
+  # plt.scatter(left_wrist_l[0],left_wrist_l[1],color = 'blue')
+  # plt.scatter(right_wrist_r[0],right_wrist_r[1],color = 'blue')
+  # plt.scatter(right_wrist_l[0],right_wrist_l[1],color = 'blue')
+  # for i in [2,3,6,11]:
+  #   plt.scatter(joints_f[i][0], joints_f[i][1], color="red")
+
+  # plt.subplot(222)
+  # plt.imshow(mask_scaled_s)
+  # plt.scatter(r_waist_s[0],r_waist_s[1], color="blue")
+  # plt.scatter(l_waist_s[0],l_waist_s[1], color="blue")
+  # plt.scatter(r_neck_scaled_s[0],r_neck_scaled_s[1], color = 'blue')
+  # plt.scatter(l_neck_scaled_s[0],l_neck_scaled_s[1], color = 'blue')
+  # plt.scatter(joints_s[12][0], joints_s[12][1], color = 'red')
+  # for i in [2,3]:
+  #   plt.scatter(joints_s[i][0], joints_s[i][1], color="red")
+
+  # plt.subplot(223)
+  # plt.imshow((((inp_f / 2.)+0.5)*255).astype(int))
+  # plt.scatter(r_waist_f[0],r_waist_f[1], color="blue")
+  # plt.scatter(l_waist_f[0],l_waist_f[1], color="blue")
+  # plt.scatter(r_neck_scaled_f[0],r_neck_scaled_f[1], color = 'blue')
+  # plt.scatter(l_neck_scaled_f[0],l_neck_scaled_f[1], color = 'blue')
+  # plt.scatter(joints_f[12][0], joints_f[12][1], color = 'red')
+  # plt.scatter(left_wrist_r[0],left_wrist_r[1],color = 'blue')
+  # plt.scatter(left_wrist_l[0],left_wrist_l[1],color = 'blue')
+  # plt.scatter(right_wrist_r[0],right_wrist_r[1],color = 'blue')
+  # plt.scatter(right_wrist_l[0],right_wrist_l[1],color = 'blue')
+  # for i in [2,3,6,11]:
+  #   plt.scatter(joints_f[i][0], joints_f[i][1], color="red")
+
+  # plt.subplot(224)
+  # plt.imshow((((inp_s / 2.)+0.5)*255).astype(int))
+  # plt.scatter(r_waist_s[0],r_waist_s[1], color="blue")
+  # plt.scatter(l_waist_s[0],l_waist_s[1], color="blue")
+  # plt.scatter(r_neck_scaled_s[0],r_neck_scaled_s[1], color = 'blue')
+  # plt.scatter(l_neck_scaled_s[0],l_neck_scaled_s[1], color = 'blue')
+  # plt.scatter(joints_s[12][0], joints_s[12][1], color = 'red')
+  # for i in [2,3]:
+  #   plt.scatter(joints_s[i][0], joints_s[i][1], color="red")
+
+  plt.savefig('..\\..\\out\\FinalFeaturePoints.jpg')
+  
+  
   ## Measurement ##
   print("Height in pixels in front view: "+ str(ht_p_f))
   print("Height in pixels in side view: "+ str(ht_p_s))
@@ -145,12 +220,11 @@ def process(ht):
   shoulder, arm, waist_f, neck_f = front_measurement(joints_f, r_waist_f, l_waist_f, r_neck_scaled_f, l_neck_scaled_f, lpp_f, arm_scale)
   waist_s, neck_s = side_measurement(joints_s, r_waist_s, l_waist_s, r_neck_scaled_s, l_neck_scaled_s, lpp_s)
   waist_c = circumference("Waist", waist_f/2, waist_s/2)
-  neck_c = circumference("Neck", neck_f/2, neck_s/2)
+  neck_c = circumference("Neck", neck_f/2, neck_f/2)
   print("Wrist Front width: "+str(cuff)+ " cm")
   print("Cuff cirumference: "+str(cuff_c)+ " cm")
 
   ## JSON output ##
-  import json
   out = {}
   out['Height'] = ht
   out['Waist'] = waist_c
