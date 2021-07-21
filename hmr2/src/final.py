@@ -224,6 +224,20 @@ def process(ht):
   print("Wrist Front width: "+str(cuff)+ " cm")
   print("Cuff cirumference: "+str(cuff_c)+ " cm")
 
+  ## Feedback ##
+  fb = ""
+  parts = ""
+  if (waist_c > ht * 0.8) or (waist_c < ht * 0.3):
+    parts += "Waist\n"
+  if (neck_c > ht * 0.45) or (neck_c < ht * 0.10):
+    parts += "Neck\n"
+  if (cuff_c > ht * 0.2) or (cuff_c < ht * 0.05):
+    parts += "Wrist\n"
+  if parts != "":
+    fb += "Please ensure that the following are clearly visible and distinguishable: " + parts
+  if fb != "":
+    fb += "Ignore if the feature points seem correct." 
+
   ## JSON output ##
   out = {}
   out['Height'] = ht
@@ -232,6 +246,7 @@ def process(ht):
   out['Cuff'] = cuff_c
   out['Shoulder'] = shoulder
   out['Arm'] = arm
+  out['feedback'] = fb
   with open('..\\..\\out\\output.json', 'w') as f:
       json.dump(out, f)
 
