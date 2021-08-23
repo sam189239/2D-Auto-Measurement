@@ -11,9 +11,9 @@ Instructions to run the program:
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
 
-![]("sample_data\Pose_3d_model\side view.png")
-![]("sample_data\Pose_3d_model\front view.png")
-
+![](header.png)
+![](sample_data\Pose_3d_model\side view.png)
+![](sample_data\Pose_3d_model\front view.png)
 ## Installation
 
 OS X & Linux:
