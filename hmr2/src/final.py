@@ -3,8 +3,8 @@ from utils import *
 def process(ht):
   start_top = time.time()
   ## Parameters ##
-  front_img_dir = "..\\..\\in\\s9f.jpg"
-  side_img_dir = "..\\..\\in\\s9s.jpg"
+  front_img_dir = "..\\..\\in\\front.jpg"
+  side_img_dir = "..\\..\\in\\side.jpg"
 
   ht_factor = 5 # percentage of pixels to detect top of segmentation in the mask
   neck_shift_factor = 0.025 # shifting neck point upward from models predicted point
@@ -152,7 +152,7 @@ def process(ht):
   plt.plot(joints_s[12][0], joints_s[12][1],marker = ".", color = 'red')
   for i in [2,3]:
     plt.plot(joints_s[i][0], joints_s[i][1], marker='.', color="red")
-
+  # plt.show()
   plt.savefig('..\\..\\out\\FinalFeaturePoints.jpg')
   
   
