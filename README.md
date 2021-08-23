@@ -11,7 +11,7 @@
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
 
-![Sample Front pose](/sample_data/Pose_3d_model/front_view.png) | ![Sample Side pose](/sample_data/Pose_3d_model/side_view.png)
+<!-- ![Sample Front pose](/sample_data/Pose_3d_model/front_view.png) | ![Sample Side pose](/sample_data/Pose_3d_model/side_view.png) -->
 <table><tr>
 <td> 
   <p align="center" style="padding: 10px">
