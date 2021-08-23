@@ -14,7 +14,8 @@ Extraction of Human Body Measurements from 2D images for Clothing options
 <!-- ![](header.png)
 ![](sample_data\Pose_3d_model\side view.png)
 ![](sample_data\Pose_3d_model\front view.png) -->
-![Images of Sample pose](/sample_data/Pose_3d_model/side view.png "Sample Pose")
+![Images of Sample pose](/sample_data/Pose_3d_model/side_view.png "Sample Pose")
+![GitHub Logo](/images/github-logo.png)
 ## Instructions
 
 Install requirements
