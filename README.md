@@ -17,14 +17,12 @@ Extraction of Human Body Measurements from 2D images for Clothing options
   <p align="center" style="padding: 10px">
     <img alt="Forwarding" src="/sample_data/Pose_3d_model/front_view.png" width="320">
     <br>
-    <em style="color: grey">Forwarding (Anahtarlama)</em>
   </p> 
 </td>
 <td> 
   <p align="center">
-    <img alt="Routing" src="/sample_data/Pose_3d_model/side_view.png" width="515">
+    <img alt="Routing" src="/sample_data/Pose_3d_model/side_view.png" width="320">
     <br>
-    <em style="color: grey">Routing (yönlendirme)</em>
   </p> 
 </td>
 </tr></table>
