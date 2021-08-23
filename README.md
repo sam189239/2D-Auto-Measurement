@@ -11,8 +11,16 @@
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
 
-|![Images of Sample pose](/sample_data/Pose_3d_model/front_view.png "Sample Pose - Front") | ![Images of Sample pose](/sample_data/Pose_3d_model/side_view.png "Sample Pose - Side")|
+![Sample Front pose](/sample_data/Pose_3d_model/front_view.png) | ![Sample Side pose](/sample_data/Pose_3d_model/side_view.png)
 
+![alt](/sample_data/Pose_3d_model/front_view.png) | ![alt](/sample_data/Pose_3d_model/side_view.png)
+// space 1
+// space 2
+// space 3
+![alt](/sample_data/Pose_3d_model/front_view.png) | ![alt](/sample_data/Pose_3d_model/side_view.png)
+// space 1
+// space 2
+// space 3
 ## Instructions
 
 Install requirements
