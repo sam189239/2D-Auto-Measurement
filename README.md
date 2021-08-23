@@ -1,12 +1,12 @@
-Instructions to run the program:
+<!-- Instructions to run the program:
 
 -> Store front and side images in the 'in' folder in the repo directory.
--> cd into hmr2/src
+-> Change directory to hmr2/src
 -> Run download_model.py if running for the first time.
 -> Run final.py and enter height. Enter height as 0 to stop the program.
 -> Output is stored in the 'out' folder in the repo directory.
 -> accuracy.py in the repo directory can be used to check accuracy of the calculation if actual measurements 
-    are stored in the actual_measure.json file in the 'in' folder.
+    are stored in the actual_measure.json file in the 'in' folder. -->
 
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
@@ -14,19 +14,33 @@ Extraction of Human Body Measurements from 2D images for Clothing options
 ![](header.png)
 ![](sample_data\Pose_3d_model\side view.png)
 ![](sample_data\Pose_3d_model\front view.png)
-## Installation
 
-OS X & Linux:
+## Instructions
 
+Install requirements
 ```sh
-npm install my-crazy-module --save
+pip install requirements.txt
+```
+Store front and side images in the 'in' folder in the repo directory.
+Change directory to hmr2/src.
+```sh
+cd hmr2/src
+```
+Run download_model.py if running for the first time.
+```sh
+python download_model.py
+```
+Run final.py and enter height. Enter height as 0 to stop the program.
+```sh
+python final.py
+```
+Run accuracy.py to check accuracy of the calculation after storing actual measurements in the actual_measure.json file in the 'in' folder.
+```sh
+cd .. 
+cd ..
+python accuracy.py
 ```
 
-Windows:
-
-```sh
-edit autoexec.bat
-```
 
 ## Usage example
 
