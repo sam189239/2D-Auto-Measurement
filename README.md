@@ -12,15 +12,23 @@
 Extraction of Human Body Measurements from 2D images for Clothing options
 
 ![Sample Front pose](/sample_data/Pose_3d_model/front_view.png) | ![Sample Side pose](/sample_data/Pose_3d_model/side_view.png)
+<table><tr>
+<td> 
+  <p align="center" style="padding: 10px">
+    <img alt="Forwarding" src="/sample_data/Pose_3d_model/front_view.png" width="320">
+    <br>
+    <em style="color: grey">Forwarding (Anahtarlama)</em>
+  </p> 
+</td>
+<td> 
+  <p align="center">
+    <img alt="Routing" src="/sample_data/Pose_3d_model/side_view.png" width="515">
+    <br>
+    <em style="color: grey">Routing (yönlendirme)</em>
+  </p> 
+</td>
+</tr></table>
 
-![alt](/sample_data/Pose_3d_model/front_view.png) | ![alt](/sample_data/Pose_3d_model/side_view.png)
-// space 1
-// space 2
-// space 3
-![alt](/sample_data/Pose_3d_model/front_view.png) | ![alt](/sample_data/Pose_3d_model/side_view.png)
-// space 1
-// space 2
-// space 3
 ## Instructions
 
 Install requirements
