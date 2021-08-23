@@ -42,5 +42,5 @@ python accuracy.py
 ```
 
 ### Timeline PPT
-[https://www.canva.com/design/DAEdhnt0qx8/2dCrGLU2EL8e3qGovTzmnA/view?utm_content=DAEdhnt0qx8&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton]
+[![Canva]][https://www.canva.com/design/DAEdhnt0qx8/2dCrGLU2EL8e3qGovTzmnA/view?utm_content=DAEdhnt0qx8&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton]
 
