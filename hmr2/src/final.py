@@ -1,5 +1,4 @@
 from utils import *
-# import utils
 
 def process(ht):
   start_top = time.time()
@@ -153,54 +152,6 @@ def process(ht):
   plt.plot(joints_s[12][0], joints_s[12][1],marker = ".", color = 'red')
   for i in [2,3]:
     plt.plot(joints_s[i][0], joints_s[i][1], marker='.', color="red")
-
-  # plt.subplot(221)
-  # plt.imshow(mask_scaled_f)
-  # plt.scatter(r_waist_f[0],r_waist_f[1], color="blue")
-  # plt.scatter(l_waist_f[0],l_waist_f[1], color="blue")
-  # plt.scatter(r_neck_scaled_f[0],r_neck_scaled_f[1], color = 'blue')
-  # plt.scatter(l_neck_scaled_f[0],l_neck_scaled_f[1], color = 'blue')
-  # plt.scatter(joints_f[12][0], joints_f[12][1], color = 'red')
-  # plt.scatter(left_wrist_r[0],left_wrist_r[1],color = 'blue')
-  # plt.scatter(left_wrist_l[0],left_wrist_l[1],color = 'blue')
-  # plt.scatter(right_wrist_r[0],right_wrist_r[1],color = 'blue')
-  # plt.scatter(right_wrist_l[0],right_wrist_l[1],color = 'blue')
-  # for i in [2,3,6,11]:
-  #   plt.scatter(joints_f[i][0], joints_f[i][1], color="red")
-
-  # plt.subplot(222)
-  # plt.imshow(mask_scaled_s)
-  # plt.scatter(r_waist_s[0],r_waist_s[1], color="blue")
-  # plt.scatter(l_waist_s[0],l_waist_s[1], color="blue")
-  # plt.scatter(r_neck_scaled_s[0],r_neck_scaled_s[1], color = 'blue')
-  # plt.scatter(l_neck_scaled_s[0],l_neck_scaled_s[1], color = 'blue')
-  # plt.scatter(joints_s[12][0], joints_s[12][1], color = 'red')
-  # for i in [2,3]:
-  #   plt.scatter(joints_s[i][0], joints_s[i][1], color="red")
-
-  # plt.subplot(223)
-  # plt.imshow((((inp_f / 2.)+0.5)*255).astype(int))
-  # plt.scatter(r_waist_f[0],r_waist_f[1], color="blue")
-  # plt.scatter(l_waist_f[0],l_waist_f[1], color="blue")
-  # plt.scatter(r_neck_scaled_f[0],r_neck_scaled_f[1], color = 'blue')
-  # plt.scatter(l_neck_scaled_f[0],l_neck_scaled_f[1], color = 'blue')
-  # plt.scatter(joints_f[12][0], joints_f[12][1], color = 'red')
-  # plt.scatter(left_wrist_r[0],left_wrist_r[1],color = 'blue')
-  # plt.scatter(left_wrist_l[0],left_wrist_l[1],color = 'blue')
-  # plt.scatter(right_wrist_r[0],right_wrist_r[1],color = 'blue')
-  # plt.scatter(right_wrist_l[0],right_wrist_l[1],color = 'blue')
-  # for i in [2,3,6,11]:
-  #   plt.scatter(joints_f[i][0], joints_f[i][1], color="red")
-
-  # plt.subplot(224)
-  # plt.imshow((((inp_s / 2.)+0.5)*255).astype(int))
-  # plt.scatter(r_waist_s[0],r_waist_s[1], color="blue")
-  # plt.scatter(l_waist_s[0],l_waist_s[1], color="blue")
-  # plt.scatter(r_neck_scaled_s[0],r_neck_scaled_s[1], color = 'blue')
-  # plt.scatter(l_neck_scaled_s[0],l_neck_scaled_s[1], color = 'blue')
-  # plt.scatter(joints_s[12][0], joints_s[12][1], color = 'red')
-  # for i in [2,3]:
-  #   plt.scatter(joints_s[i][0], joints_s[i][1], color="red")
 
   plt.savefig('..\\..\\out\\FinalFeaturePoints.jpg')
   
