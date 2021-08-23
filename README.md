@@ -11,7 +11,7 @@
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
 
-![Images of Sample pose](/sample_data/Pose_3d_model/front_view.png "Sample Pose - Front") | ![Images of Sample pose](/sample_data/Pose_3d_model/side_view.png "Sample Pose - Side")
+|![Images of Sample pose](/sample_data/Pose_3d_model/front_view.png "Sample Pose - Front") | ![Images of Sample pose](/sample_data/Pose_3d_model/side_view.png "Sample Pose - Side")|
 
 ## Instructions
 
@@ -40,5 +40,8 @@ python accuracy.py
 ```
 
 ### Timeline PPT
-[Canva](URL "https://www.canva.com/design/DAEdhnt0qx8/2dCrGLU2EL8e3qGovTzmnA/view?utm_content=DAEdhnt0qx8&utm_campaign=designshare&utm_medium=link&utm_source=sharebuttong")
+[Canva][ppt_url]
+
+
+[ppt_url]: https://www.canva.com/design/DAEdhnt0qx8/2dCrGLU2EL8e3qGovTzmnA/view?utm_content=DAEdhnt0qx8&utm_campaign=designshare&utm_medium=link&utm_source=sharebuttong
 
