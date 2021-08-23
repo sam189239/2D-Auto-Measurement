@@ -11,10 +11,10 @@
 # 2D Auto Measurement
 Extraction of Human Body Measurements from 2D images for Clothing options
 
-![](header.png)
+<!-- ![](header.png)
 ![](sample_data\Pose_3d_model\side view.png)
-![](sample_data\Pose_3d_model\front view.png)
-
+![](sample_data\Pose_3d_model\front view.png) -->
+![Images of Sample pose](/sample_data/Pose_3d_model/side view.png "Sample Pose")
 ## Instructions
 
 Install requirements
@@ -44,3 +44,8 @@ python accuracy.py
 ### Timeline PPT
 [![Canva]][https://www.canva.com/design/DAEdhnt0qx8/2dCrGLU2EL8e3qGovTzmnA/view?utm_content=DAEdhnt0qx8&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton]
 
+[![NPM Version][npm-image]][npm-url]
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
