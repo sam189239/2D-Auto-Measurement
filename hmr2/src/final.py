@@ -3,8 +3,8 @@ from utils import *
 def process(ht):
   start_top = time.time()
   ## Parameters ##
-  front_img_dir = "..\\..\\in\\front.jpg"
-  side_img_dir = "..\\..\\in\\side.jpg"
+  front_img_dir = "..\\..\\in\\Person 2-Height 169cm.jpeg"
+  side_img_dir = "..\\..\\in\\Person 2.jpeg"
 
   ht_factor = 5 # percentage of pixels to detect top of segmentation in the mask
   neck_shift_factor = 0.025 # shifting neck point upward from models predicted point
@@ -33,7 +33,6 @@ def process(ht):
   edges_f = cv2.Canny(mask_scaled_f,224,224)
   dest_scaled_f = edges_f
   dest_crop_f = dest_scaled_f[joints_f[13][1]:int((joints_f[8][1]+joints_f[9][1])/2),joints_f[8][0]:joints_f[9][0]]
-  # dest_crop_f = dest_scaled_f[top_f:int((joints_f[8][1]+joints_f[9][1])/2),joints_f[8][0]:joints_f[9][0]]
   norm_f = abs(dest_crop_f)>0
   r_neck_f,l_neck_f = shortest_neck(norm_f,[shifted_neck_f[0]-joints_f[8][0],shifted_neck_f[1]-joints_f[13][1]])
   r_neck_scaled_f = [r_neck_f[1]+joints_f[8][0],r_neck_f[0]+joints_f[13][1]]
@@ -41,7 +40,6 @@ def process(ht):
 
 
   shifted_waist_f = shift_waist(joints_f, ht_p_f, waist_shift_factor)
-  # r_waist_f,l_waist_f = waist_pts(mask_scaled_f,shifted_waist_f)
   r_waist_f,l_waist_f = waist_pts(abs(edges_f)>0,shifted_waist_f)
 
   r_waist_f = [r_waist_f,shifted_waist_f[1]]
