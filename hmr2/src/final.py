@@ -3,8 +3,8 @@ from utils import *
 def process(ht):
   start_top = time.time()
   ## Parameters ##
-  front_img_dir = "..\\..\\in\\Person 2-Height 169cm.jpeg"
-  side_img_dir = "..\\..\\in\\Person 2.jpeg"
+  front_img_dir = "..\\..\\in\\front.jpg"
+  side_img_dir = "..\\..\\in\\side.jpg"
 
   ht_factor = 5 # percentage of pixels to detect top of segmentation in the mask
   neck_shift_factor = 0.025 # shifting neck point upward from models predicted point
