@@ -1,0 +1,6 @@
+deeplab_model
+hmr2/src/deeplab_model
+logs
+SemanticSegmentation-master
+.vs
+__pycache__
